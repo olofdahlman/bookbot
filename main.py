@@ -16,7 +16,7 @@ def main():
         print(f"Number of words: {word_count}")
 
         #This dictionary and following for loops count the different characters used in the text
-        
+
         letter_count = {"a":0,"b":0,"c":0,"d":0,"e":0,"f":0,"m":0,"n":0,"g":0,"h":0,
                         "k":0,"l":0,"j":0,"i":0,"t":0,"y":0,"u":0,"w":0,"q":0,"r":0,
                         "s":0,"o":0,"p":0,"z":0,"x":0,"v":0,".":0,"!":0,"?":0,"-":0,
@@ -41,12 +41,13 @@ def main():
                                  #formatting_characters += 1
                         #else:
                             #print("Error: non-string character detected")
+                    
+        sorted_list = sorted(letter_count.items(), key=lambda kv:  (kv[1], kv[0]), reverse=True)
 
-
-        for letter in letter_count:
+        for letter in sorted_list:
             
-            print(f"Number of {letter} characters: {letter_count[letter]}")
-
+            print(f"Number of '{letter[0]}' characters: {letter[1]}")
+        #print(sorted_list)
         print(f"Number of other characters: {nonletter_characters}")
         #print(f"Number of file formatting characters like '\ n' and '\ r': {formatting_characters}")
 
